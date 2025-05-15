@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "bundler", // ✅ REQUIRED
+    "esModuleInterop": true,
+    "strict": true,
+    "allowImportingTsExtensions": true, // ✅ Now valid
+    "outDir": "dist",
+    "rootDir": "src",
+    "noEmit": true, // ✅ Required for allowImportingTsExtensions
+    "typeRoots": ["./types", "./node_modules/@types"]
+  }
+}
