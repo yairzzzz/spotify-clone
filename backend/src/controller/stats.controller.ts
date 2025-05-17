@@ -27,6 +27,7 @@ export const getStats = async (req: Request, res: Response): Promise<any> => {
           },
         ]),
       ]);
+
     res.status(200).json({
       totalSongs,
       totalAlbums,

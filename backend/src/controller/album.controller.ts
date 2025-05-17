@@ -23,6 +23,8 @@ export const getAlbumById = async (
   try {
     const { id } = req.params;
 
+    Bundel.findById(userId);
+
     const album = await Album.findById(id).populate("songs");
 
     if (!album) {
