@@ -5,6 +5,6 @@ const router = Router();
 
 router.get("/", getAllAlbums);
 
-router.get("/:albumid", getAlbumById);
+router.get("/:id", getAlbumById);
 
 export default router;
