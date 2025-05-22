@@ -1,10 +1,22 @@
 import { useChatStore } from "@/stores/useChatStore";
-import { HeadphonesIcon } from "lucide-react";
+import { useUser } from "@clerk/clerk-react";
+import { HeadphonesIcon, User } from "lucide-react";
+import { useEffect } from "react";
 
 const FriendsActivity = () => {
-  const { fetchUsers, users, isLoading } = useChatStore();
+  const { fetchUsers, users, isLoading, error } = useChatStore();
+  const { user } = useUser();
+  useEffect(() => {
+    if (user) fetchUsers();
+  }, [fetchUsers, user]);
+
   return (
-    <div>
+    <div className="h-full bg-zinc-900 rounded-lg flex flex-col">
+      <div className="p-4 flex justify-between items-center border-b border-zinc-800">
+        <div className="flex items-center gap-2">
+          <User className="size-4 shrink-0" />
+        </div>
+      </div>
       <LoginPrompt />
     </div>
   );
